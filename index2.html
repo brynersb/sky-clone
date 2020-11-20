@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<body>
+    <main>
+
+    </main>
+
+</body>
+<script>
+
+    async function getContent() {
+        try {
+            const response = await fetch('http://sky-frontend.herokuapp.com/movies/')
+            const data = await response.json()
+            show(data)
+            console.log(data)
+
+        } catch (error) {
+            console.log("Erro!!!")
+        }
+    }
+
+    getContent()
+
+    function show(urls) {
+
+        let output = ''
+
+        for (let url of urls) {
+
+            output += `<li>${url.items}</li>`
+
+        }
+
+        document.querySelector('main').innerHTML = output
+
+        
+    }
+
+
+</script>
+
+</html>

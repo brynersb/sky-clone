@@ -10,23 +10,45 @@ body{
 }
 
 
+#menu-acessibility{
+    margin-left: 200px ;
+}
+
 .nav-wrapper{
-    background-color: #f1f2fa;
+    background-color:#f1f2fa;
     padding: 0px 7vw;
     border-bottom: 1px solid rgb(241, 242, 250);
-    /* box-shadow: 1px 1px 2px #888888;  */
 }
 
 .nav-content{
-    background-color: #fff; 
-    padding: 0px 9vw;
-    /* box-shadow: 1px 1px 2px #dad8d8;  */
-
+    background-color:#fff;   
 }
 
 .tabs.tabs-transparent .tab a {
+    font-weight: bold;
     color:#646466;
+    text-transform: initial;
 }
+
+.tabs.tabs-transparent .tab a:hover {
+    color: #D81818;
+}
+
+.tabs.tabs-transparent .tab a.active {
+    color: #D81818;
+    position: relative;
+}
+
+.tabs.tabs-transparent .tab a.active::after {
+    content:"";
+    background: #D81818;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0px;
+    left: 0px;
+}
+
 
 .nav-wrapper a{
     color:#646466;
@@ -55,14 +77,31 @@ main{
 
 .carousel .carousel-item {
     width: 800px;
-    height: 380px;
-    
+    height: 380px;  
 }
 
 .carousel .carousel-item>img {
     width: 100%;
     height: 100%;
     border-radius: 15px;
+}
+
+.carousel .indicators .indicator-item {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    height: 4px;
+    width: 20px;
+    margin: 0px 4px -5px 4px;
+    background-color: rgba(100, 98, 98, 0.5);
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+    border-radius: 5px;
+    
+}
+
+.carousel .indicators .indicator-item.active {
+    background-color:#D81818;
 }
 
 .swiper-container{
@@ -84,6 +123,7 @@ main{
     width: 25vw;
     height: 35vh;
     border-radius: 10px;
+    position: relative;
 }
 
 .swiper-slide>img {
@@ -91,6 +131,74 @@ main{
     height: 100%;
     border-radius: 10px;
 }
+
+.swiper-slide .store-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 5px;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 5px;
+    border-radius: 10pc;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 1;
+}
+
+.swiper-button-prev {
+    background: rgb(94, 93, 93);
+    padding: 37px 31px 37px 13px;
+    border-radius: 0 10pc 10pc 0;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    width: calc(var(--swiper-navigation-size)/ 44 * 27);
+    height: var(--swiper-navigation-size);
+    margin-top: calc(-1 * var(--swiper-navigation-size)/ 2);
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+
+.swiper-button-next {
+    background: rgb(94, 93, 93);
+    padding: 37px 13px 37px 31px;
+    border-radius: 10pc 0 0 10pc;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: calc(var(--swiper-navigation-size)/ 44 * 27);
+    height: var(--swiper-navigation-size);
+    margin-top: calc(-1 * var(--swiper-navigation-size)/ 2);
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-family: swiper-icons;
+    font-size: var(--swiper-navigation-size);
+    text-transform: none!important;
+    letter-spacing: 0;
+    text-transform: none;
+    font-variant: initial;
+    line-height: 1;
+    font-size: 18px;
+}
+
+.swiper-slide .store-btn .material-icons {
+    font-size: 18px;
+}
+
+
+
 
 .swiper-wrapper {
     z-index: none;
@@ -120,11 +228,12 @@ main{
 }
 .page-footer .container .row .sky-mobile{
     display: flex;
+    margin-bottom: 20px;
 }
 
-.page-footer .container .row .col.l6 img{ 
-    margin-right: 2vw;
-    height: 6.5vh;
+.page-footer .container .row .sky-mobile img{
+    width: 48px;
+    margin-right: 10px;
 }
 
 .page-footer .container .row h6{
@@ -164,10 +273,16 @@ main{
 }
 
 
-.page-footer .footer-copyright1 a img{
-    padding-top: 10px;
+.logo-gray{
+    padding: 10px 0px;
     height: 3rem;
     position: absolute;
+}
+
+#social-midia img{
+    padding: 10px 4px;
+    height: 3rem;
+    opacity: 0.5;
 }
 
 .page-footer .footer-copyright2{
